@@ -1,0 +1,9 @@
+#pragma once
+
+#define AES_WEAPON_DAMAGE_FACTOR 3
+
+#define AES_WEAPON_DAMAGE(x) (x*AES_WEAPON_DAMAGE_FACTOR)
+#define AES_WEAPON_DAMAGE_CAP(x) ((x) * AES_WEAPON_DAMAGE_FACTOR)
+
+
+// aes_defs.h

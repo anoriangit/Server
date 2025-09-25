@@ -37,6 +37,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #include "npc.h"
 
 #include "bot.h"
+#include "aes_defs.h"
 
 extern QueryServ* QServ;
 extern WorldServer worldserver;
@@ -1362,7 +1363,7 @@ int64 Mob::GetWeaponDamage(Mob *against, const EQ::ItemInstance *weapon_item, in
 			*hate += banedmg;
 	}
 
-	return std::max((int64)0, dmg);
+	return std::max((int64)0, AES_WEAPON_DAMAGE(dmg));
 }
 
 int64 Mob::DoDamageCaps(int64 base_damage)
@@ -1476,7 +1477,7 @@ int64 Mob::DoDamageCaps(int64 base_damage)
 		}
 	}
 
-	return std::min((int64)cap, base_damage);
+	return std::min((int64)AES_WEAPON_DAMAGE_CAP(cap), base_damage);
 }
 
 // other is the defender, this is the attacker
