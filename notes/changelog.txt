@@ -1,0 +1,29 @@
+
+--------------------------------------------------------------------------------
+
+code: zone.attack.cpp modified melee attack damage and damage caps
+item: 11010 (Simple Tunic) created
+quest: hager shureshot: handing in note yields Simple Tunic now
+server rules: Character:SkillUpMaximumChancePercentage and Character:SkillUpMinimumChancePercentage set to: 50/20
+spell: 17779 "Alter Location: Origin" created (for click effect teleport to tutorial zone)
+
+--------------------------------------------------------------------------------
+
+19-Aug-2025
+
+zone: tutorial expansion flag changed from 99 to 0 (classic)
+server rules:
+	AA:NormalizedAAEnabled enabled, AA:NormalizedAANumberOfWhiteConPerAA set to 10, AA:SoundForAAEarned enabled
+	Expansion:CurrentExpansion set to 0 (classic)
+item: short sword* changed to proc "strike of health 2" (9227) at 300%
+
+--------------------------------------------------------------------------------
+
+20-Aug-2025
+
+item: 	created 1377 "Wayfarer's Coin" with port to tutorial zone click effect
+	and added to starting_items table
+
+	created 1378 "Small Splinter of the Sky" augment (type 7)
+	created 1800 "Small Splinter of Destruction" augment (type 4)
+	created 1801 "Wayfarer's Apprentice Coin"

@@ -1,0 +1,19 @@
+===============================================================================
+MULTICLASS SUPPORT
+===============================================================================
+
+Inheritance: entity->mob->client
+
+
+All zone code dealing with character classes in basic eqemu works with the
+protected mob.class_ member of mob. Either directly or through
+	inline uint8 GetClass() const { return class_; }
+
+The approach taken by THJ is to add a uint32 classes bitfield to
+struct PlayerProfile_Struct (eq_packet_structs.h) and override
+all accesses to the base class (mob) .class_ member by calls
+to an added function HasClass(uint8 class_id) which checks that bitfield
+
+( Class codes and bitmasks reference:
+	https://docs.eqemu.io/server/player/class-list/#player-and-npc-classes
+)

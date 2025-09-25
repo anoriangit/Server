@@ -1,0 +1,50 @@
+
+
+===============================================================================
+SPELLS
+===============================================================================
+
+Id 819 Sunset Home: seems a good example for how to create a gate to a specific zone
+==> copy created as ID 17779 Alter Location: Origin and added to "Short Sword*" as a click effect
+
+===============================================================================
+NPC
+===============================================================================
+
+# commands related to NPC
+#dbspawn ID - creates a spawn for NPC ID (npc_types table) where you stand
+#npcspawn create - creates an entry in spawn2, making the targeted NPC permanent
+#npcspawn remove - deletes spawn (selected as target) from spawn2 table
+
+--------------------------------------------------------------------------------
+free ID range in npc_types we use is: 3061 thru 3999
+
+3061: Amron Hagen - Wayfarer's greeting NPC - The Origin - Faction 1759 (Wayfarer's Brotherhood)
+
+--------------------------------------------------------------------------------
+free ID range in doors we use is: 446 thru 789
+
+
+===============================================================================
+MULTICLASS SUPPORT
+===============================================================================
+
+Inheritance: entity->mob->client
+
+Snippets (hopefully relevant) found so far in the THJ source
+
+lua_client.cpp
+bool Lua_Client::AddExtraClass(int class_id) {
+	Lua_Safe_Call_Bool();
+	return self->AddExtraClass(class_id);
+}
+
+client.cpp:
+bool Client::AddExtraClass(int class_id)
+
+=> this uses a data bucket in order to store the class bits:
+	SetBucket("GestaltClasses", std::to_string(classes_bits | n_class_bit));
+
+
+NOTE: lots of code from THJ carried over in mob, client, lua_client, common.eq_packet_structs
+	THIS WILL NEED A LOT MORE REVIEW
