@@ -14,7 +14,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings, "..e.other:GetName()..".  Feel free to rest here in Surefall Glade.  Just be sure you do no hunting whilst here.  If so, then you shall pay the punishment of death.  I trust you [will abide by the laws]?");
+		e.self:Say("Greetings, "..e.other:GetName()..".  Welcome to The Origin. This is where it all began and this is where you shall begin again.  I am Amron Hagen, a humble servant of the great Tunare.  If you are new to this world, you should seek out the guild masters and trainers to learn your trade.  Once you have done so, return to me and I shall reward you with some gifts to help you on your way.  Just say the word 'reward' when you are ready.");
 	elseif(e.message:findi("add class")) then
 		e.self:Say("Ok then, attempting to add DRUID...");
 		e.other:AddExtraClass(6);
@@ -42,4 +42,4 @@ function event_timer(e)
 	e.self:DoAnim(9); -- bow
 end
 
--- EOF zone: qrg ID: 3032 NPC: Amron_Hagen
+-- EOF zone: tutorial ID: 3032 NPC: Amron_Hagen

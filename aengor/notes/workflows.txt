@@ -1,0 +1,23 @@
+
+
+--------------------------------------------------------------------------------
+CREATE NPC/MOB
+free ID range in npc_types we use is: 3061 thru 3999
+--------------------------------------------------------------------------------
+
+
+1. use Spire Zone viewer to find an NPC/MOB similar to what you want to create
+2. note ID
+3. lookup next free ID in moblist.txt
+4. make a copy of selected base mob, changing ID to the one found in 3
+	- use db edit tool (HeidiSQL or similar)
+	- find original in table npc_types
+	- create a copy with the new ID, change stuff like name etc
+	- once a spawn has been created (see #commands below) you can edit with SPIRE
+
+
+# commands related to NPC
+#dbspawn ID - creates a spawn for NPC ID (npc_types table) where you stand
+#npcspawn create - creates an entry in spawn2, making the targeted NPC permanent
+#npcspawn remove - deletes spawn (selected as target) from spawn2 table
+
